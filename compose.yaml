@@ -1,0 +1,12 @@
+services:
+  vector-db:
+    build:
+      context: ./vector-db
+      dockerfile: Dockerfile
+    tty: true
+    ports:
+      - 8000:8000
+    volumes:
+      - ./vector-db:/app
+    env_file:
+      - ./vector-db/.env
